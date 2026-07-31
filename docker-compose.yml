@@ -3,8 +3,8 @@ version: "3.9"
 services:
 
   frontend:
-    build: ./Learning-Online
-    container_name: frontend
+    build: ./frontend
+    container_name: cont_frontend
 
     restart: always
 
@@ -12,8 +12,8 @@ services:
       - "3000"
 
   backend:
-    build: ./hoctructuyen
-    container_name: backend
+    build: ./backend
+    container_name: cont_backend
 
     restart: always
 
@@ -22,12 +22,12 @@ services:
 
   nginx:
     image: nginx:latest
-    container_name: nginx
+    container_name: cont_nginx
 
     restart: always
 
     ports:
-      - "80:80"
+      - "95:80"
 
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
