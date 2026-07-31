@@ -1,0 +1,3323 @@
+{
+	"info": {
+		"_postman_id": "e9edbb51-0562-4020-90d0-0018bf013e93",
+		"name": "gym-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33735647"
+	},
+	"item": [
+		{
+			"name": "employee",
+			"item": [
+				{
+					"name": "http://127.0.0.1:8080/employees",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aG92dWF2dWEiLCJpYXQiOjE3MTUwNTcwMDIsImV4cCI6MTcxNTE0MzQwMn0.7X5nyn6DTiSuMdfFy7kCWvb4EKdl0DLuoKt-rBFlLxcmrFVQyKT6QG6KXb3nGzEt8MQhKpht0doRQndvDMQzEw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/employees?page=0&size=10",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"employees"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/employees/admin/add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nhân viên 27\",\r\n    \"username\": \"nhanvien27\",\r\n    \"password\": \"12345678\",\r\n    \"email\": \"nhanvien27@gmail.com\",\r\n    \"fullName\": \"Đô rê bi ta\",\r\n    \"dob\": \"01-01-2002 05:00:00\",\r\n    \"cccd\": \"000990111001\",\r\n    \"phone\": \"0110011100\",\r\n    \"address\": \"gốc mít\",\r\n    \"startWork\": \"28-04-2024 05:00:00\",\r\n    \"sex\": \"Nam\",\r\n    \"position\": {\r\n        \"id\": 5\r\n    },\r\n    \"roles\": [\"manager\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/employees/admin/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"employees",
+								"admin",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/employees/update/8",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nhân viên 27\",\r\n    \"username\": \"nhanvien27\",\r\n    \"password\": \"12345678\",\r\n    \"email\": \"nhanvien27@gmail.com\",\r\n    \"fullName\": \"Đô rê bi ta\",\r\n    \"dob\": \"01-01-2002 05:00:00\",\r\n    \"cccd\": \"000990111001\",\r\n    \"phone\": \"0110011100\",\r\n    \"address\": \"gốc mít\",\r\n    \"startWork\": \"28-04-2024 05:00:00\",\r\n    \"sex\": \"Nam\",\r\n    \"position\": {\r\n        \"id\": 5\r\n    },\r\n    \"roles\": [\"employee\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/employees/admin/update/13",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"employees",
+								"admin",
+								"update",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/employees/admin/13",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJnaWFuZ2hvIiwiaWF0IjoxNzEzNTg0NTM2LCJleHAiOjE3MTM2NzA5MzZ9.1Pa-i08JxvksCWj7ZxXptrcmnH14kfTADWY3ySVmiyEt0Ddt_KYvGg4QDNRy3cK97s1H4u287vwJkcL2MgcWEg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"employee\": {\r\n                \"id\": 6\r\n            },\r\n            \"bookingTime\": \"19-10-0025 19:07:57\",\r\n            \"endTime\": \"19-10-0025 19:09:57\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/employees/admin/13",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"employees",
+								"admin",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/employees?page=0&size=10&name=nh",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/employees?page=0&size=10&positionName=pt",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"employees"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "positionName",
+									"value": "pt"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/employees/delete/8",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJnaWFuZ2hvIiwiaWF0IjoxNzEzNTg0NTM2LCJleHAiOjE3MTM2NzA5MzZ9.1Pa-i08JxvksCWj7ZxXptrcmnH14kfTADWY3ySVmiyEt0Ddt_KYvGg4QDNRy3cK97s1H4u287vwJkcL2MgcWEg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"employee\": {\r\n                \"id\": 6\r\n            },\r\n            \"bookingTime\": \"19-10-0025 19:07:57\",\r\n            \"endTime\": \"19-10-0025 19:09:57\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/employees/delete/8",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"employees",
+								"delete",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "equipment",
+			"item": [
+				{
+					"name": "http://127.0.0.1:8080/equipments",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tạ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/equipments",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"equipments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/equipments/add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Loa nhỏ to",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "10000",
+									"type": "text"
+								},
+								{
+									"key": "madein",
+									"value": "Việt Kiều",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Admin/OneDrive/Hình ảnh/Ảnh chụp màn hình/333435102_245652564456735_1507929380322362299_n.jpg"
+								},
+								{
+									"key": "equipType",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/equipments/admin/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"equipments",
+								"admin",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/equipments/update/5",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Loa nhỏ update",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "30000",
+									"type": "text"
+								},
+								{
+									"key": "madein",
+									"value": "Mỹ Đình",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Admin/OneDrive/Hình ảnh/Ảnh chụp màn hình/Untitled2.png"
+								},
+								{
+									"key": "equipType",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/equipments/admin/update/18",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"equipments",
+								"admin",
+								"update",
+								"18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/equipments/5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tạ 100kg\",\r\n    \"quantity\": 20,\r\n    \"price\": 20.5,\r\n    \"madein\": \"Trung Quốc\",\r\n    \"equipType\":{\r\n        \"id\": 1\r\n    },\r\n    \"rooms\": [{\r\n        \"id\": 1\r\n    },\r\n    {\r\n        \"id\": 3\r\n    }]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/equipments/5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"equipments",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/equipments?page=0&size=3&sortBy=price&order=desc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tạ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/equipments?page=0&size=3&sortBy=price&order=desc",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"equipments"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "3"
+								},
+								{
+									"key": "sortBy",
+									"value": "price"
+								},
+								{
+									"key": "order",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/equipments/delete/5",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tạ 100kg\",\r\n    \"quantity\": 20,\r\n    \"price\": 20.5,\r\n    \"madein\": \"Trung Quốc\",\r\n    \"equipType\":{\r\n        \"id\": 1\r\n    },\r\n    \"rooms\": [{\r\n        \"id\": 1\r\n    },\r\n    {\r\n        \"id\": 3\r\n    }]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/equipments/delete/5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"equipments",
+								"delete",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/equipments?page=0&name=f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tạ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/equipments?page=0&size=10&name=ab",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"equipments"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "name",
+									"value": "ab"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/equipments/update/5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Loa update",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "30000",
+									"type": "text"
+								},
+								{
+									"key": "madein",
+									"value": "Mỹ Đình",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Admin/OneDrive/Hình ảnh/Ảnh chụp màn hình/Screenshot 2024-05-24 140348.png"
+								},
+								{
+									"key": "equipType",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/equipments/17/image",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"equipments",
+								"17",
+								"image"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "equip-type",
+			"item": [
+				{
+					"name": "http://127.0.0.1:8080/equip-types",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nhân viên\",\r\n    \"dob\": \"01-01-2002 05:00:00\",\r\n    \"cccd\": \"000000111111\",\r\n    \"phone\": \"0000011111\",\r\n    \"email\": \"nhanvien@gmail.com\",\r\n    \"sex\": false,\r\n    \"position\": {\r\n        \"id\": 4\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/equip-types",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"equip-types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/equip-types/add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tạ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/equip-types/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"equip-types",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/equip-types/update/2",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tạ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/equip-types/update/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"equip-types",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/equip-types/2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tạ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/equip-types/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"equip-types",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/equip-types/delete/1",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nhân viên\",\r\n    \"dob\": \"01-01-2002 05:00:00\",\r\n    \"cccd\": \"000000111111\",\r\n    \"phone\": \"0000011111\",\r\n    \"email\": \"nhanvien@gmail.com\",\r\n    \"sex\": false,\r\n    \"position\": {\r\n        \"id\": 4\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/equip-types/delete/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"equip-types",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/equip-types?page=0&size=10&name=a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nhân viên\",\r\n    \"dob\": \"01-01-2002 05:00:00\",\r\n    \"cccd\": \"000000111111\",\r\n    \"phone\": \"0000011111\",\r\n    \"email\": \"nhanvien@gmail.com\",\r\n    \"sex\": false,\r\n    \"position\": {\r\n        \"id\": 4\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/equip-types?page=0&size=10&name=a",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"equip-types"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "name",
+									"value": "a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/equip-types?page=1&size=1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nhân viên\",\r\n    \"dob\": \"01-01-2002 05:00:00\",\r\n    \"cccd\": \"000000111111\",\r\n    \"phone\": \"0000011111\",\r\n    \"email\": \"nhanvien@gmail.com\",\r\n    \"sex\": false,\r\n    \"position\": {\r\n        \"id\": 4\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/equip-types?page=1&size=1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"equip-types"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "member",
+			"item": [
+				{
+					"name": "http://127.0.0.1:8080/members",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJydWF2dWEiLCJpYXQiOjE3MTUxNTA4NzgsImV4cCI6MTcxNTIzNzI3OH0.SoDgZhlKx-8MEF72MnDlZxTydiPrs68ujppzBt26YJviUcwhedkSZqAPax5uGRnpxDwiJbPzxBA8FfHI_tUUEA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tạ 100kg\",\r\n    \"quantity\": 20,\r\n    \"price\": 20.5,\r\n    \"madein\": \"Trung Quốc\",\r\n    \"equipType\":{\r\n        \"id\": 1\r\n    },\r\n    \"rooms\": [{\r\n        \"id\": 1\r\n    },\r\n    {\r\n        \"id\": 3\r\n    }]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/members",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"members"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/members/add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aG9iZW8iLCJpYXQiOjE3MTQ4NzY0NDQsImV4cCI6MTcxNDk2Mjg0NH0.StoxY0umFbm2rMLPfhx3La9p_UxEKL57LdJAjBsMgniZ4R2muX3eTUaqWPWT66l6ISLjbLUlrQxX6jHjXqMIFA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mem 1\",\r\n    \"email\": \"mem1@gmail.com\",\r\n    \"phone\": \"0000077777\",\r\n    \"cccd\": \"000000888888\",\r\n    \"sex\": true,\r\n    \"status\": \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/members/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"members",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/members/5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Member 1\",\r\n    \"email\": \"mem1@gmail.com\",\r\n    \"phone\": \"0000077777\",\r\n    \"cccd\": \"000000888888\",\r\n    \"sex\": false,\r\n    \"status\": \"false\",\r\n    \"memberCard\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/members/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"members",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/members/update/5",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Member 1\",\r\n    \"email\": \"mem1@gmail.com\",\r\n    \"phone\": \"0000077777\",\r\n    \"cccd\": \"000000888888\",\r\n    \"sex\": false,\r\n    \"status\": \"false\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/members/update/5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"members",
+								"update",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/members/delete/5",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Member 1\",\r\n    \"email\": \"mem1@gmail.com\",\r\n    \"phone\": \"0000077777\",\r\n    \"cccd\": \"000000888888\",\r\n    \"sex\": false,\r\n    \"status\": \"false\",\r\n    \"memberCard\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/members/delete/5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"members",
+								"delete",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/members?page=0&size=2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/members?page=0&size=10",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"members"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/members?page=0&size=10&name=đ",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/members?page=0&size=10&name=đ",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"members"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "name",
+									"value": "đ"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "position",
+			"item": [
+				{
+					"name": "http://127.0.0.1:8080/positions/3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/positions/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"positions",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/positions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/positions?name=ti",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"positions"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "ti"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/positions/add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Bảo vệ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/positions/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"positions",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/positions/1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Bảo vệ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/positions/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"positions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/positions/update/4",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Bảo vệ 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/positions/update/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"positions",
+								"update",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/positions/delete/4",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/positions/delete/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"positions",
+								"delete",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "member-card",
+			"item": [
+				{
+					"name": "http://127.0.0.1:8080/member-cards",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"name\": \"gói vàng\",\r\n        \"price\": 500000.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/member-cards",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"member-cards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/member-cards/add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"startDay\": \"2023-01-01T00:00:00.000+00:00\",\r\n        \"endDay\": \"2023-12-12T00:00:00.000+00:00\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/member-cards/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"member-cards",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/member-cards/update/3",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"startDay\": \"01-02-2023\",\r\n        \"endDay\": \"12-12-2023\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/member-cards/update/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"member-cards",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/member-cards/3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"startDay\": \"2023-01-02T00:00:00.000+00:00\",\r\n        \"endDay\": \"2023-12-12T00:00:00.000+00:00\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/member-cards/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"member-cards",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/member-cards/delete/3",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"startDay\": \"2023-01-02T00:00:00.000+00:00\",\r\n        \"endDay\": \"2023-12-12T00:00:00.000+00:00\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/member-cards/delete/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"member-cards",
+								"delete",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/member-cards?page=0&size=1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/member-cards?page=0&size=1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"member-cards"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "package",
+			"item": [
+				{
+					"name": "http://127.0.0.1:8080/packages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/packages",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"packages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/packages/update/5",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"gói đồng\",\r\n    \"price\": 20000,\r\n    \"duration\": 30\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/packages/update/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"packages",
+								"update",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/packages/5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"name\": \"gói vàng\",\r\n        \"price\": 500000.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/packages/15",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"packages",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/packages/delete/5",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"name\": \"gói vàng\",\r\n        \"price\": 500000.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/packages/delete/5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"packages",
+								"delete",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/packages?page=0&size=1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/packages?page=0&size=1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"packages"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/packages?page=0&size=10&name=b",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/packages?page=0&size=10&name=b",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"packages"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "name",
+									"value": "b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/packages/add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "gói D",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "2000001",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/D:/bf5e0261-44bf-429d-859b-98b65a7b5959.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/packages/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"packages",
+								"add"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "booking",
+			"item": [
+				{
+					"name": "http://127.0.0.1:8080/bookings",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJydWF2dWEiLCJpYXQiOjE3MTUxNTQwODEsImV4cCI6MTcxNTI0MDQ4MX0.jk_5KEKkdqQnpbal4UVGUDDZtkAVj_ezv0mhh5rEPTCskcj0_bKAxtJgeoKnMZrnzACAMc8pS8oAafoihnUFsw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Member 1\",\r\n    \"email\": \"mem1@gmail.com\",\r\n    \"phone\": \"0000077777\",\r\n    \"cccd\": \"000000888888\",\r\n    \"sex\": false,\r\n    \"status\": \"false\",\r\n    \"memberCard\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/bookings",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/bookings/add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiYW9kb2kiLCJpYXQiOjE3MTY0NDUzNjIsImV4cCI6MTcxNjUzMTc2Mn0.xIBLIRTFcRSkijJdtG8rN7aQihNq80A3dWztsrQe4yFnPOzCy1Rpw_CloIEzjtSV_buSUEULR0-TBb-4unpwZA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member\": {\r\n        \"id\": 2\r\n    },\r\n    \"employee\": {\r\n        \"id\": 5\r\n    },\r\n    \"bookingTime\": \"2024-05-23T16:11:56\",\r\n    \"endTime\": \"2024-05-25T19:11:56\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/bookings/admin/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"bookings",
+								"admin",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/bookings/update/3",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtZW9iZW8iLCJpYXQiOjE3MTM2NjMxODAsImV4cCI6MTcxMzc0OTU4MH0.bXdWqd0jH50jdgDadCmCEMfFxrMmOvBUeBMflPjG-eCQR4HqdxfNzXBxDpDOeiNoMwE0SEeJBKUG7gGpAOr-BA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"employee\": {\r\n                \"id\": 6\r\n            },\r\n            \"bookingTime\": \"22-10-2025 19:07:57\",\r\n            \"endTime\": \"22-10-2025 19:09:57\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/bookings/update/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"bookings",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/bookings/3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJnaWFuZ2hvIiwiaWF0IjoxNzEzNTg0NTM2LCJleHAiOjE3MTM2NzA5MzZ9.1Pa-i08JxvksCWj7ZxXptrcmnH14kfTADWY3ySVmiyEt0Ddt_KYvGg4QDNRy3cK97s1H4u287vwJkcL2MgcWEg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"employee\": {\r\n                \"id\": 6\r\n            },\r\n            \"bookingTime\": \"19-10-0025 19:07:57\",\r\n            \"endTime\": \"19-10-0025 19:09:57\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/bookings/17",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"bookings",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/bookings/delete/3",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJnaWFuZ2hvIiwiaWF0IjoxNzEzNTg0NTM2LCJleHAiOjE3MTM2NzA5MzZ9.1Pa-i08JxvksCWj7ZxXptrcmnH14kfTADWY3ySVmiyEt0Ddt_KYvGg4QDNRy3cK97s1H4u287vwJkcL2MgcWEg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"employee\": {\r\n                \"id\": 6\r\n            },\r\n            \"bookingTime\": \"19-10-0025 19:07:57\",\r\n            \"endTime\": \"19-10-0025 19:09:57\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/bookings/delete/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"bookings",
+								"delete",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/bookings/add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiYW9kb2kiLCJpYXQiOjE3MTY0NDUzNjIsImV4cCI6MTcxNjUzMTc2Mn0.xIBLIRTFcRSkijJdtG8rN7aQihNq80A3dWztsrQe4yFnPOzCy1Rpw_CloIEzjtSV_buSUEULR0-TBb-4unpwZA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employee\": {\r\n        \"id\": 6\r\n    },\r\n    \"bookingTime\": \"2024-05-23T16:11:56\",\r\n    \"endTime\": \"2024-05-25T19:11:56\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/bookings/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"bookings",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/bookings/admin/all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aG9iZW8iLCJpYXQiOjE3MTM3OTIwMzUsImV4cCI6MTcxMzg3ODQzNX0._Y0c6Ts5k_iIIIXzJcNM1hDx88gUc_6Qu7kBVC-GBU3kqppztJlw09iGEXOng-I1ih_mscltKqw8ef5G6RsM2w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employee\": {\r\n        \"id\": 5\r\n    },\r\n    \"bookingTime\": \"2024-06-27T16:11:56\",\r\n    \"endTime\": \"2024-06-27T19:11:56\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/bookings/admin/all",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"bookings",
+								"admin",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/bookings/add?bookingTime=2024-05-05%2000:00:00&endTime=2024-05-05%2001:00:00",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/bookings/add?bookingTime=2024-04-27%2023:11:56&endTime=2024-04-28%2002:15:00",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"bookings",
+								"add"
+							],
+							"query": [
+								{
+									"key": "bookingTime",
+									"value": "2024-04-27%2023:11:56"
+								},
+								{
+									"key": "endTime",
+									"value": "2024-04-28%2002:15:00"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "http://127.0.0.1:8080/signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"hổ vằn xám\",\r\n    \"username\": \"hovanxam\",\r\n    \"password\": \"12345678\",\r\n    \"email\": \"hovanxam@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/signup",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"hovanxam\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "http://127.0.0.1:8080/users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/users?page=0&size=10",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/users/search?keyword=mèo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/users?keyword=mèo",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "mèo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/users/delete/7",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/users/delete/7",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"delete",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "member-package",
+			"item": [
+				{
+					"name": "http://127.0.0.1:8080/member_packages/add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmFkIiwiaWF0IjoxNzE2MzMxNDgwLCJleHAiOjE3MTY0MTc4ODB9.kne9WVBOrhWiUh5612BeZ4VXG-9zLxeuhUkM-hlVkDM7Y7SLEU2_xMgdqoPfKobotyE4QSwwzVJncXOwJT9guQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pack\": {\r\n        \"id\": 1\r\n    },\r\n    \"quantity\": 2,\r\n    \"startDate\": \"2024-05-20T18:07:40\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/member_packages/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"member_packages",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/member_packages",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aG9iZW8iLCJpYXQiOjE3MTM3OTQ2MTIsImV4cCI6MTcxMzg4MTAxMn0.lbvvixmgF4ATUI3iomNHp4Ej5pbNEq_9CwzTBsWzv25jd6udsCKUl7d-550qgz4TrfmDVjYPbbouFgMYfAFsfQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pack\": {\r\n        \"id\": 1\r\n    },\r\n    \"startDate\": \"2024-04-20T18:07:40\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/member_packages",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"member_packages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/member_packages/admin/all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aG9iZW8iLCJpYXQiOjE3MTM3OTQ2MTIsImV4cCI6MTcxMzg4MTAxMn0.lbvvixmgF4ATUI3iomNHp4Ej5pbNEq_9CwzTBsWzv25jd6udsCKUl7d-550qgz4TrfmDVjYPbbouFgMYfAFsfQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pack\": {\r\n        \"id\": 1\r\n    },\r\n    \"startDate\": \"2024-04-20T18:07:40\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/member_packages/admin/all",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"member_packages",
+								"admin",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/member_packages/admin/add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aG9iZW8iLCJpYXQiOjE3MTM3OTQ2MTIsImV4cCI6MTcxMzg4MTAxMn0.lbvvixmgF4ATUI3iomNHp4Ej5pbNEq_9CwzTBsWzv25jd6udsCKUl7d-550qgz4TrfmDVjYPbbouFgMYfAFsfQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member\": {\r\n        \"id\": 6\r\n    },\r\n    \"pack\": {\r\n        \"id\": 1\r\n    },\r\n    \"startDate\": \"2024-04-20T18:07:40\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/member_packages/admin/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"member_packages",
+								"admin",
+								"add"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "workout-session",
+			"item": [
+				{
+					"name": "http://127.0.0.1:8080/workout-sessions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aG9iZW8iLCJpYXQiOjE3MTM4MDMyODMsImV4cCI6MTcxMzg4OTY4M30.QMs3XDs7F_Qf6C2gbsYkWCieTJ3QVNHP2bZRaSvVlYAZVIcB7UO4Hvr5lBJy-G4nTKW0HDEgbN0EClMLOoKu3g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/workout-sessions",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"workout-sessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/workout-sessions/admin/all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aG9iZW8iLCJpYXQiOjE3MTM4MDMyODMsImV4cCI6MTcxMzg4OTY4M30.QMs3XDs7F_Qf6C2gbsYkWCieTJ3QVNHP2bZRaSvVlYAZVIcB7UO4Hvr5lBJy-G4nTKW0HDEgbN0EClMLOoKu3g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/workout-sessions/admin/all",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"workout-sessions",
+								"admin",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "notification",
+			"item": [
+				{
+					"name": "http://127.0.0.1:8080/notifications",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"recipientToken\": \"PS0t-XZ6Tc8tZW1fQCd3BeNEJK2uTAwr76ktQg7l5j4\",\r\n    \"title\": \"Title\",\r\n    \"body\": \"Body\",\r\n    \"image\": \"https://www.appcoda.com/wp-content/uploads/2015/04/react-native.png\",\r\n    \"data\": {\r\n        \"key1\": \"key11111\",\r\n        \"key2\": \"key222222222\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/notifications",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"notifications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/token",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/token",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "http://127.0.0.1:8080/profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJob3ZhbnhhbSIsImlhdCI6MTcxNjY1Mzk4OSwiZXhwIjoxNzE2NzQwMzg5fQ.MB1hGIRFjt1-lgNjuuWcpxW1zA0jB2yyFzIE1VmN2euYbZeoOnQtc4OI-Wz7np3p9HQrWjSSb-McWZYA3QMUuA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/profile",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/profile/update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJob3ZhbnhhbSIsImlhdCI6MTcxNjY1Mzk4OSwiZXhwIjoxNzE2NzQwMzg5fQ.MB1hGIRFjt1-lgNjuuWcpxW1zA0jB2yyFzIE1VmN2euYbZeoOnQtc4OI-Wz7np3p9HQrWjSSb-McWZYA3QMUuA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "hổ vằn",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "0389761499",
+									"type": "text"
+								},
+								{
+									"key": "cccd",
+									"value": "004000666399",
+									"type": "text"
+								},
+								{
+									"key": "sex",
+									"value": "Nam",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Admin/OneDrive/Hình ảnh/Ảnh chụp màn hình/troll.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/profile/update",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"profile",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/profile/change-password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmFkIiwiaWF0IjoxNzE1ODQyMTk0LCJleHAiOjE3MTU5Mjg1OTR9.251NjaGJ1abVYTXvBrcwSmHYfTR-RDYyiK9Pt8x_DRn20mOBjVLTC1RnrqsPHBqJCIpQ6EnxaQAeO5ihXneHZQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\": \"12345678\",\r\n    \"newPassword\": \"11111111\",\r\n    \"confirmPassword\": \"11111111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/profile/change-password",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"profile",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/profile/delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aG92dWF2dWEiLCJpYXQiOjE3MTQ4OTI3NzcsImV4cCI6MTcxNDk3OTE3N30.N5js3GSCwpoBMSTLE1MLqDBhm3IE7qUEXkzuf6p-jmFcNByc2wQSLCBekrfRUN-2xUoeF21sw0LwxA8vz24jqA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/profile/delete",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"profile",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/profile/avatar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJob3ZhbnhhbSIsImlhdCI6MTcxNjY1Mzk4OSwiZXhwIjoxNzE2NzQwMzg5fQ.MB1hGIRFjt1-lgNjuuWcpxW1zA0jB2yyFzIE1VmN2euYbZeoOnQtc4OI-Wz7np3p9HQrWjSSb-McWZYA3QMUuA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/profile/avatar",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"profile",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Report",
+			"item": [
+				{
+					"name": "http://127.0.0.1:8080/reports/revenue",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/reports/revenue",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"reports",
+								"revenue"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Image",
+			"item": [
+				{
+					"name": "http://127.0.0.1:8080/upload",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/Untitled.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/upload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/thi.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/upload",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/view/58f2444b-9536-4b6d-a921-f52e082da547",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/view/58f2444b-9536-4b6d-a921-f52e082da547",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"view",
+								"58f2444b-9536-4b6d-a921-f52e082da547"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "gym-branch",
+			"item": [
+				{
+					"name": "http://127.0.0.1:8080/gym-branches/add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "gymBranch_RoomDTO",
+									"value": "{\n    \"branchGymName\": \"Gym Cầu\",\n    \"address\": \"120 Gầm\",\n    \"manager\": {\n        \"id\": 6\n    },\n    \"roomAndAmounts\": [\n        {\n            \"room\": {\n                \"id\": 3\n            },\n            \"amount\": 5\n        },\n        {\n            \"room\": {\n                \"id\": 5\n            },\n            \"amount\": 3\n        },\n        {\n            \"room\": {\n                \"id\": 7\n            },\n            \"amount\": 3\n        }\n    ]\n}",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Admin/OneDrive/Hình ảnh/Ảnh chụp màn hình/Untitled2.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/gym-branches/admin/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"gym-branches",
+								"admin",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/gym-branches/update/17",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "gymBranch_RoomDTO",
+									"value": "{\n    \"branchGymName\": \"Gym Đống Đa update\",\n    \"address\": \"140 Đống Đa update\",\n    \"roomAndAmounts\": [\n        {\n            \"room\": {\n                \"id\": 6\n            },\n            \"amount\": 4\n        },\n        {\n            \"room\": {\n                \"id\": 5\n            },\n            \"amount\": 5\n        }\n    ]\n}",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Admin/OneDrive/Hình ảnh/darius-bartsy-s.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/gym-branches/admin/update/17",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"gym-branches",
+								"admin",
+								"update",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/gym-branches?name=&address=",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/gym-branches",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"gym-branches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/gym-branches/admin/31",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/gym-branches/admin/31",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"gym-branches",
+								"admin",
+								"31"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/gym-branches/31/image",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/gym-branches/31/image",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"gym-branches",
+								"31",
+								"image"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "room",
+			"item": [
+				{
+					"name": "http://127.0.0.1:8080/rooms/admin/add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "equipment_RoomDTO",
+									"value": "{\n    \"name\": \"phòng tắm 5\",\n    \"equipmentAmounts\": [\n        {\n            \"equipment\": {\n                \"id\": 1\n            },\n            \"amount\": 15\n        },\n        {\n            \"equipment\": {\n                \"id\": 6\n            },\n            \"amount\": 15\n        }\n    ]\n}",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Admin/OneDrive/Hình ảnh/Ảnh chụp màn hình/Untitled2.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/rooms/admin/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"rooms",
+								"admin",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/rooms/admin/11",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"phòng tắm\",\r\n    \"equipmentAmounts\": [\r\n        {\r\n            \"equipment\": {\r\n                \"id\": 1\r\n            },\r\n            \"amount\": 15\r\n        },\r\n        {\r\n            \"equipment\": {\r\n                \"id\": 6\r\n            },\r\n            \"amount\": 15\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/rooms/admin/11",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"rooms",
+								"admin",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/rooms/admin/update/10",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "equipment_RoomDTO",
+									"value": "{\n    \"name\": \"phòng tắm 4 update\",\n    \"equipmentAmounts\": [\n        {\n            \"equipment\": {\n                \"id\": 1\n            },\n            \"amount\": 15\n        },\n        {\n            \"equipment\": {\n                \"id\": 6\n            },\n            \"amount\": 15\n        }\n    ]\n}",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Admin/OneDrive/Hình ảnh/Ảnh chụp màn hình/larDELETE.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/rooms/admin/update/14",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"rooms",
+								"admin",
+								"update",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/rooms/delete/10",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/rooms/delete/10",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"rooms",
+								"delete",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/rooms?name=W",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/rooms?name=W",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"rooms"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "W"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8080/rooms/11/image",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/rooms/14/image",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"rooms",
+								"14",
+								"image"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
