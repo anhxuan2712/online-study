@@ -1,0 +1,20 @@
+1 Trình tự kiểm tra và câu lệnh
+ Bước 1: Kiểm tra pipeline
+ Bước 2: Kiểm tra server (free -f, dh -f, htop,...)
+ Bước 3: Kiểm tra Docker compose (docker compose ps)
+ Bước 4: Kiểm tra các container (docker compose logs)
+ Bước 5: Kiểm tra port (ss -tuln)
+ Bước 6: Kiểm tra response (curl http://localhost:95)
+
+2. 5 nguyên nhân lỗi có thể gặp
+ -ci/cd thất bại (sai key,port,ip server,..)
+ -container không hoạt động (dockerfile cấu hình sai)
+ -nginx reverse proxy cấu hình sai
+ -server thiếu tài nguyên (cpu cao, ram hoặc disk đầy)
+ -port bị trùng
+
+3. Ba việc ưu tiên xử lý đầu tiên
+ -Kiểm tra trạng thái toàn bộ container
+ -Đọc logs của fe,be,nginx
+ -Kiểm tra tài nguyên server
+
