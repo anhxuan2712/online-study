@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+
+  frontend:
+    build: ./Learning-Online
+    container_name: frontend
+
+    restart: always
+
+    expose:
+      - "3000"
+
+  backend:
+    build: ./hoctructuyen
+    container_name: backend
+
+    restart: always
+
+    expose:
+      - "8080"
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+
+    restart: always
+
+    ports:
+      - "80:80"
+
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+
+    depends_on:
+      - frontend
+      - backend
