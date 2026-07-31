@@ -1,0 +1,34 @@
+1. Vai trò của cloudflare
+ -Quản lí DNS cho tên miền
+ -Ẩn địa chỉ ip thật của máy chủ
+ -Cung cấp https/ssl
+ -Chống tấn công DDoS
+ -Cache nội dung tĩnh giúp website tải nhanh hơn
+
+2. Vai trò sửa subdomain
+ -quản lý dễ hơn
+ -phần quyền rõ ràng
+ -mỗi dịch vụ có thể triển khai độc lộc
+ 
+3. Không nên lộ origin ip
+ -hacker có thể bỏ qua cloudflare và tấn công trực tiếp server
+ -dễ bị tấn công DDoS 
+ -dễ bị quét và khai thác lỗ hổng
+ -làm giảm hiệu quả bảo mật của hệ thống
+
+4. Database không nên public ra ngoài
+ - database chứa dữ liệu quan trọng của hệ thống
+ - nếu public dễ bị dò mk, nguy cơ mất dữ liệu
+ - tiêu tốn tài nguyên truy cập trái phép
+
+5. 5 rủi ro kỹ thuật hoặc bảo mật
+ -Lộ ip gốc khiến hacker tấn công trực tiếp lên server
+ -Database mở port public ra ngoài internet
+ -không bật https làm dữ liệu k được mã hóa
+ -reverse proxy cấu hình sai dẫn đến truy cập trái phép
+ -không sao lưu dữ liệu
+
+6. 3 đề xuất cải thiện cho doanh nghiệp
+ -sử dụng firewall chỉ mở các cổng cần thiết
+ -thiết lập hệ thống giám sát và ghi log
+ -xây dựng quy trình ci/cd kết hợp với backup dữ liệu
