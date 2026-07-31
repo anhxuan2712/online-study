@@ -1,0 +1,34 @@
+1. Luồng hoạt động
+ Luồng triển khai: dev->->github->github actions->server
+ Luồng người dùng: user->domain/clouflare->nginx->app
+
+2. Các bước chính của workflow
+ Bước 1: Checkout sc từ github
+ Bước 2: docker github secrets
+ Bước 3: SSH vào server
+ Bước 4: Di chuyển đến thư mục project
+ Bước 5: Lấy sc mới
+ Bước 6: Dừng container cũ
+ Bước 7: Buil và khởi động lại hệ thống
+ Bước 8: Kiểm tra trạng thái container
+ Bước 9: Kiểm tra log của các container
+ Bước 10: Kiểm tra phản hồi từ website
+
+3. Github Secrets chức năng
+ Dùng để lưu thông tin nhạy cảm và bảo mật
+ SERVER_HOST: địa chỉ ip server
+ SERVER_USER: tài khoản ssh
+ SERVER_PORT: cổng vào server
+ SSH_PRIVATE_KEY: key dùng để github actions ssh vào server
+
+4. Hệ thống được kiểm tra sau deploy
+ 1. Kiểm tra trạng thái của container
+ 2. Kiểm tra log của các container
+ 3. Kiểm tra phản hồi từ website.
+
+5. 5 lỗi kỹ thuật có thể gặp
+ -Github Actions không chạy (sai trigger, file deploy.yml,...)
+ -SSH thất bại (sai port,key,...)
+ -Docker build thất bại (sai Dockerfile,lỗi từ sc,...)
+ -container không khởi động (port bị trùng, docker compose cấu hình sai, ...)
+ -Website không truy cập được (cấu hình nginx sai,..)
