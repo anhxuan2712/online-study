@@ -1,6 +1,6 @@
- Sử dụng minike
+1. Sử dụng minike
 
- Các khái niệm
+2. Các khái niệm
 -Cluster: là toàn bộ hệ thống Kubernetes, bao gồm nhiều Node để chạy và quản lý Node
 -Node: là một máy trong cluster tương ứng như 1 server, nhiệm vụ để chạy nhiều Pod
 -Pod: là đơn vị triển khai nhỏ nhất trong k8s, một Pod có thể tương đương với 1 container
@@ -8,59 +8,21 @@
 -Service: là lớp trung gian giúp người dùng truy cập ứng dụng mà không cần biết Pod nào đang chạy và cũng hỗ trợ cân bằng tải giữa các Pod.
 -Ingerss: là cổng vào của k8s, Ingerss nhận request từ người dùng và chuyển đến service tương ứng dựa trên tên miền hoặc url
 
- 5 điểm khác nhau giữa docker compose và kubernetes
+3. Sự khác nhau giữa docker compose và kubernetes
 -docker compose chủ yếu dùng cho hệ thống nhỏ, kubernetes phù hợp với hệ thống lớn và nhiều dịch vụ
 -docker compose thường chạy trên 1 máy, kubernetes có thể chạy trên nhiều node trong một cluster
 -docker compose không tự phục hồi container khi xảy ra lỗi, kubernetes tự tạo lại Pod khi Pod bị lỗi
 -docker compose scale bằng tay, k8s hỗ trợ scale linh hoạt và tự động
 -docker compose không có ingress từ bên ngoài, k8s có ingerss kết hợp với service để định tuyến và cân bằng tải
 
- Kiến trúc Docker compose
--Hệ thống hiện tại sử dụng Docker Compose để triển khai ứng dụng trên một máy chủ.
--Luồng truy cập: user -> domain/cloudflare -> nginx reverse proxy - docker compose -> app -> databse
--Luồng triển khai: developer -> git push -> github -> ci/cd(github actions) -> deploy
--trong mô hình này:
-+Domain hoặc cloudflare tiếp nhận truy cập từ người dùng
-+Nginx Reverse Proxy nhận request và chuyển đến app
-+App xử lý dữ liệu và kết nối đến database
-+Docker compose quản lý việc tạo, chạy và dừng các container
-+Github Actions tự động triển khai ứng dụng khi có commit mới
-
- Kiến trúc Kubernetes
--Nếu hệ thống phát triển lớn hơn, doanh nghiệp có thể chuyển sang k8s
--Luồng truy cập: user -> domain/cloudflare -> ingress -> service -> pod
--Luồng triển khai: developer -> git push -> github -> ci/cd -> deploy
--Vai trò của các thành phần:
-+Cluster: Toàn bộ hệ thống k8s gồm nhiều node
-+Node: Máy chủ dùng để chạy pod tương ứng như server
-+Pod: Đơn vị nhỏ nhất chạy trong Node tương đương như container
-+Ingress: Tiếp nhận request từ bên ngoài và chuyển đến serivce
-+Service: Điều hướng và cân bằng tải đến các Pod
-+Deployment: Quản lý Pod, tự tạo lại Pod khi lỗi và hỗ trợ cập nhật phiên bản
-
- So sánh 2 kiến trúc
--Dùng Docker Compose khi:
-+Hệ thống nhỏ
-+Chỉ có 1 máy chủ
-+Ít service
-+Lượng người dùng không lớn
-+Triển khai đơn giản
-
--Dùng k8s khi:
-+Hệ thống có nhiều người dùng
-+Cần mở rộng nhiều máy chủ
-+Cần triển khai nhiều phiên bản ứng dụng
-+Muốn tự phục hồi khi Pod gặp lỗi
-+Muốn dễ dàng scale hệ thống
-
--Ít nhất 5 rủi ro nếu hệ thống lớn vẫn sử dụng kiến trúc docker compose
+4. Ít nhất 5 rủi ro nếu hệ thống lớn vẫn sử dụng kiến trúc docker compose
 +Nếu máy chủ gặp sự cố thì toàn bộ hệ thống sẽ sập
 +Khó mở rộng khi lượng truy cập tăng
 +Không tự động tạo lại container khi xảy ra lỗi
 +Khó quản lý nhiều môi trường và nhiều dịch vụ
 +Khó cân bằng tải và triển khai trên nhiều máy chủ
 
-3 lợi ích khi chuyển
+5. Lợi ích khi doanh nghiệp chuyển sang tư duy orchestration đúng cách
 -Tối ưu hóa hiệu suất và tự động xử lý sự cố
 -Khả năng mở rộng linh hoạt và tự động
 -Chuẩn hóa quy trình và tăng tốc độ triển khai
