@@ -1,0 +1,38 @@
+1. GitOps là phương pháp triển khai và quản lý hệ thống k8s bằng Git. Mọi thay đổi của hệ thống 
+đều được thực hiện thông qua các file Manifest lưu trên Git. ArgoCD sẽ tự động theo dõi Git và 
+đồng bộ các thay đổi lên k8s Cluster. GitOps giúp việc triển khai trở nên tự động, dễ quản lý 
+và hạn chế các thao tác thủ công trên Kubernetes.
+
+2. ArgoCD là công cụ CD dành cho k8s, có nhiệm vụ theo dõi Manifest Repo trên Git. Khi phát hiện 
+có thay đổi trong các file Manifest, ArgoCD sẽ tự động Sync để triển khai hoặc cập nhật ứng dụng 
+trên k8s Cluster.
+
+3. Source of Truth có nghĩa là nguồn dữ liệu chính xác và đáng tin cậy nhất của hệ thống. Trong 
+GitOps, toàn bộ cấu hình triển khai của k8s như Deployment, Service, Ingress... đều được lưu 
+trong Manifest Repo trên Git. Nếu cấu hình trên k8s khác với cấu hình trong Git, ArgoCD sẽ tự 
+động đồng bộ để đưa K8s về đúng trạng thái lưu trong Git.
+
+4. GitHub Actions và ArgoCD
+ -GitHub Actions chịu trách nhiệm CI: build, test, tạo Docker Image và cập nhật Manifest Repo
+ -ArgoCD chịu trách nhiệm CD: theo dõi Manifest Repo, đồng bộ(Sync) và triển khai cấu hình lên k8s Cluster.
+
+5. Drift là tình trạng cấu hình thực tế trên K8s khác với cấu hình đã được lưu trong Git.
+
+6. Sync là quá trình ArgoCD đồng bộ cấu hình giữa Git và kubernetes.
+
+7. Lợi ích của GitOps đối với hệ thống Kubernetes.
+ -Tự động triển khai ứng dụng: sau khi cập nhật Manifest Repo, ArgoCD sẽ tự động triển khai lên 
+  k8s mà không cần chạy lệnh kubectl apply thủ công.
+ -Dễ quản lý phiên bản: Toàn bộ cấu hình được lưu trên Git nên có thể xem lịch sử thay đổi, so 
+  sánh phiên bản và biết ai đã chỉnh sửa.
+ -Dễ khôi phục hệ thống: Nếu triển khai gặp lỗi, chỉ cần quay lại (Rollback) phiên bản Manifest 
+  trước đó trên Git, ArgoCD sẽ tự động đồng bộ lại hệ thống.
+ -Giảm thao tác thủ công: Không cần đăng nhập trực tiếp vào k8s Cluster để triển khai , giúp giảm 
+  sai sót do con người.
+ -Đảm bảo cấu hình luôn chính xác: ArgoCD liên tục theo dõi Git và tự động đồng bộ khi phát hiện 
+  Drift, giúp k8s luôn đúng với cấu hình đã lưu trên Git.
+
+8. Khó khăn khi doanh nghiệp chuyển sang GitOps
+ -Mất thời gian triển khai ban đầu
+ -Nhân viên cần học thêm công nghệ mới
+ -Quản lý Manifest phức tạp
